@@ -1,74 +1,169 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# Zerodha Full-Stack Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack web application inspired by Zerodha, built to manage trading activities, portfolios, and real-time dashboards. The project contains three main components: **frontend**, **backend**, and **dashboard**, all integrated to provide seamless user experience.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+* [Project Overview](#project-overview)
+* [Folder Structure](#folder-structure)
+* [Tech Stack](#tech-stack)
+* [Database](#database)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [License](#license)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Overview
 
-### `npm test`
+This project is designed to simulate a simplified trading platform similar to Zerodha. It allows users to:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* View and manage portfolio holdings.
+* Place and track orders.
+* Monitor positions in real-time.
+* Access a user-friendly dashboard with charts and analytics.
 
-### `npm run build`
+The application is structured into three main folders:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **frontend** – React-based client for user interaction.
+2. **backend** – Node.js + Express server handling APIs, authentication, and database interaction.
+3. **dashboard** – Admin and analytics dashboard built with React for visualizing trading data.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Folder Structure
 
-### `npm run eject`
+```
+Zerodha/
+│
+├─ backend/        # Node.js server, API routes, database models
+│   ├─ controllers/
+│   ├─ models/
+│   ├─ routes/
+│   ├─ utils/
+│   └─ index.js
+│
+├─ dashboard/      # React dashboard with charts, portfolio, and order management
+│   ├─ src/
+│   ├─ public/
+│   └─ package.json
+│
+├─ frontend/       # React frontend for main user interface
+│   ├─ src/
+│   ├─ public/
+│   └─ package.json
+│
+└─ README.md
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Tech Stack
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Frontend:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* React.js
+* Tailwind CSS / CSS3
+* Axios for API requests
 
-## Learn More
+**Backend:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Node.js
+* Express.js
+* MongoDB with Mongoose ORM
+* JWT for authentication
+* bcrypt for password hashing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Dashboard:**
 
-### Code Splitting
+* React.js
+* Chart.js / Recharts for data visualization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Database:**
 
-### Analyzing the Bundle Size
+* MongoDB (NoSQL database)
+* Collections: Users, Orders, Holdings, Positions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## Database Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Install **MongoDB** locally or use a cloud provider like **MongoDB Atlas**.
 
-### Advanced Configuration
+2. Create a database named `zerodha`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. Collections to include:
 
-### Deployment
+   * `users` – Stores user authentication and profile info.
+   * `orders` – Tracks buy/sell orders.
+   * `holdings` – User portfolio holdings.
+   * `positions` – Current trading positions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+4. Configure `.env` in `backend/`:
 
-### `npm run build` fails to minify
+```
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+JWT_SECRET=your_jwt_secret
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# Zerodha
->>>>>>> 92e5a2555edc59da80216c43e1907a8d38f357f1
+---
+
+## Installation
+
+### Backend
+
+```bash
+cd backend
+npm install
+npm start   # Runs server on http://localhost:5000
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm start   # Runs frontend on http://localhost:3000
+```
+
+### Dashboard
+
+```bash
+cd dashboard
+npm install
+npm start   # Runs dashboard on http://localhost:3001 (or another port)
+```
+
+---
+
+## Usage
+
+1. Start the backend server.
+2. Start the frontend application.
+3. Start the dashboard for analytics.
+4. Register a new user and start placing orders or checking holdings.
+5. Dashboard provides visual insights of your trades and portfolio.
+
+---
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature-name`
+3. Make your changes and commit: `git commit -m "Add feature"`
+4. Push to your branch: `git push origin feature-name`
+5. Create a Pull Request.
+
+---
+
+## License
+
+This project is **MIT Licensed**. See `LICENSE` for details.
+
+---
+
+> Built with ❤️ by Likhitha J
